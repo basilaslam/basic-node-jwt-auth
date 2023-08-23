@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
-
+require('dotenv').config()
 // Initiate Mongo Server
 InitiateMongoServer();
 
@@ -28,3 +28,6 @@ app.use("/user", user);
 app.listen(PORT, (req, res) => {
   console.log(`Server Started at PORT ${PORT}`);
 });
+
+
+module.exports = app;

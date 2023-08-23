@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+require('dotenv').config()
 
 // Replace this with your MONGOURI.
-const MONGOURI = "mongodb://test:a12345@ds257698.mlab.com:57698/node-auth";
+const MONGOURI = process.env.MONGODB_URI;
+
+console.log(MONGOURI)
 
 const InitiateMongoServer = async () => {
   try {
