@@ -3,11 +3,12 @@ const bodyParser = require("body-parser");
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 require('dotenv').config()
+const cors = require('cors')
 // Initiate Mongo Server
 InitiateMongoServer();
 
 const app = express();
-
+app.use(cors())
 // PORT
 const PORT = process.env.PORT || 4000;
 
